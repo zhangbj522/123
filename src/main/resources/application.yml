@@ -1,0 +1,25 @@
+server:
+  port: 8088
+  tomcat:
+    max-http-form-post-size: -1
+
+spring:
+  http:
+    default-encoding: utf-8
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://8.210.35.109:3306/wang_task?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/1?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: root
+    #password: zbj696969
+    password: zbj696969
+  devtools:
+    add-properties: false
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.example.frame.model
+
+upload:
+  base:
+    dir: /mnt
