@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>算法详情</title>
+    <title>算法-知识点总结</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <link rel="stylesheet" href="../static/css/typo.css">
     <link rel="stylesheet" href="../static/lib/prism/prism.css">
@@ -21,7 +21,7 @@
     <div class="ui container">
       <!--为了适应手机端查看页面，添加stackable属性，代表可堆叠，给grid之前加上stackable-->
       <div class="ui inverted secondary stackable menu">
-        <h2 class="ui teal header item">数据结构</h2>
+        <h2 class="ui white header item">数据结构</h2>
           <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>线性表</a>
           <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>散列表</a>
           <a href="#" class="m-item item m-mobile-hide"><i class="mini file icon"></i>树</a>
@@ -61,10 +61,7 @@
             </div>
         </div>
       </div>
-      <div class="ui  attached segment">
-          <!--图片区域-->
-          <img src="../static/images/algorithm.png" alt="" class="ui fluid rounded image">
-      </div>
+
       <div class="ui attached padded segment">
           <!--内容部分-->
           <div class="ui right aligned basic segment">
@@ -73,250 +70,939 @@
           <h2 class="ui center aligned header">算法</h2>
           <br>
            <div id="content" class="typo typo-selection js-toc-content  m-padded-lr-responsive m-padded-tb-large">
-            <h2 id="section1">一、算法基本概念 </h2>
-            <p><b>算法</b> 是指解题方案的准确而完整的描述，是一系列解决问题的清晰指令，算法代表着用系统的方法描述解决问题的策略机制。也就是说，能够对一定规范的输入，在有限时间内获得所要求的输出。如果一个算法有缺陷，或不适合于某个问题，执行这个算法将不会解决这个问题。不同的算法可能用不同的时间、空间或效率来完成同样的任务。一个算法的优劣可以用空间复杂度与时间复杂度来衡量。</p>
-            <h4>1.算法的特征</h4>
-               <p>1）<b>输入性：</b> 有零个或多个外部量作为算法的输入</p>
-               <p>2）<b>输出性：</b> 算法至少有一个量作为输出</p>
-               <p>3）<b>确定性：</b> 算法中每条指令清晰，无歧义</p>
-               <p>4）<b>有穷性：</b> 算法中每条指令的执行次数有限，执行每条指令时间也有限</p>
-               <p>5）<b>可行性：</b> 算法原则上能够精确的运行，而且人们用纸和笔做有限次运算后即可 完成</p>
-            <h4>2.算法效率</h4>
-               <h5>时间复杂度</h5>
-               <p>一般来说，一个算法执行所消耗的时间从理论上是算不出来的，只有通过上机运行才能 测试出来。当然，我们也没必要知道一个算法它具体执行的时间是多少，而我们又知道，一 个算法花费的时间与算法中语句的执行次数是成正比的。哪个算法语句执行的次数多，它花费的时间就多。</p>
-
+            <h2 id="section1">数据结构中算法总结 </h2>
                <pre><code class="language-css">
-def test(n):
-    count = 0;
-    for i in range(count,n):
-       for j in range(count,n):
-            count+=1
-           for k in range(0,2*n):
-               count+=1
-                   icount=10
-               while icount>0:
-                   count+=1
-                   icount-=1</code></pre>
-          <p>时间复杂度的几条基本计算规则</p>
-            <ul>
-                <li>基本操作，即只有常数项，认为其时间复杂度为 O(1)</li>
-                <li>顺序结构，时间复杂度按加法进行计算</li>
-                <li>循环结构，时间复杂度按乘法进行计算</li>
-                <li>分支结构，时间复杂度取最大值</li>
-                <li>判断一个算法的效率时，往往只需要关注操作数量的最高次项，其它次要项和 常数项可以忽略</li>
-                <li>在没有特殊说明时，我们所分析的算法的时间复杂度都是指最坏时间复杂度</li>
-            </ul>
-     <h5>空间复杂度</h5>
-    <p>一个程序的空间复杂度是指运行完一个程序所需内存的大小。利用程序的空间复杂度， 可以对程序的运行所需要的内存多少有个预先估计。一个程序执行时除了需要存储空间和存 储本身所使用的指令、常数、变量和输入数据外，还需要一些对数据进行操作的工作单元和 存储一些为现实计算所需信息的辅助空间。</p>
-  <p>程序执行时所需存储空间包括以下两部分。</p>
-   <ul>
-     <li>固定部分。这部分空间的大小与输入/输出的数据的个数多少、数值无关。主要包 括指令空间（即代码空间）、数据空间（常量、简单变量）等所占的空间。这部分属于静态 空间。</li>
-      <li>可变空间，这部分空间的主要包括动态分配的空间，以及递归栈所需的空间等。 这部分的空间大小与算法有关。</li>
-     </ul>
+d//链表基本操作tatus ListOppose(LinkList &L)
+{
+    linklist p,q;
+    p=L;
+    p=p->next;
+    L->next=NULL;
+    while(p){
+        q=p;
+        p=p->next;
+        q->next=L->next;
+        L->next=q;
+    }
+    return OK;
+}
 
-<h2 id="section2">二、排序算法</h2>
- <p><b>排序算法</b> 是一种能将一串数据依照特定顺序进行排列的一 种算法。</p>
-      <p>稳定性：稳定排序算法会让原本有相等键值的纪录维持相对次序。也就是如果一个排序 算法是稳定的，当有两个相等键值的纪录 R 和 S，且在原本的列表中 R 出现在 S 之前，在 排序过的列表中 R 也将会是在 S 之前。</p>
-  <h4>1.冒泡排序</h4>
-    <p>冒泡排序（英语：Bubble Sort）是一种简单的排序算法。它重复地遍历要排序的数列， 一次比较两个元素，如果他们的顺序错误就把他们交换过来。遍历数列的工作是重复地进行 直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元 素会经由交换慢慢“浮”到数列的顶端。</p>
-  <p>冒泡排序算法的运作如下：</p>
-    <ul>
-        <li>比较相邻的元素。如果第一个比第二个大（升序），就交换他们两个。</li>
-        <li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后 的元素会是最大的数。</li>
-        <li>针对所有的元素重复以上的步骤，除了最后一个。</li>
-        <li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
-    </ul>
-  <pre class="language-css"><code class="language-css">
-def bubble_sort(alist):
-      for j in range(len(alist) - 1, 0, -1): # j 表示每次遍历需要比较的次数，是逐渐减小的
-      for i in range(j):
-      if alist[i] > alist[i+1]:
-          alist[i], alist[i+1] = alist[i+1], alist[i]
+//两个有序链表合并成一个
+void MergeList(LinkList &la,LinkList &lb)
+{
+    LinkList pa,pb,pc;
+    pc=la;
+    pa=la->next;pb=la->next;
+    while(pa&&pb)
+    {
+        if(pa->num<pb->num) {pc->next=pa;pc=pa;pa=pa->next;}
+        else
+        {pc->next=pb;pc=pb;pb=pb->next;}
+    }
+    if(pa)
+        pc->next=pa;
+    if(pb)
+        pc->next=pb;
+}
 
-      li = [54,26,93,17,77,31,44,55,20]
-      bubble_sort(li)
-      print(li)</code></pre>
-  <h4>2.选择排序</h4>
-    <p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是通过构 建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入 排序在实现上，在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素 提供插入空间</p>
-  <p>选择排序算法：</p>
-  <pre class="language-css"><code class="language-css">
-def selection_sort(alist): n = len(alist) # 需要进行 n-1 次选择操作 for i in range(n-1): # 记录最小位置 min_index = i # 从 i+1 位置到末尾选择出最小数据 for j in range(i+1, n): if alist[j] < alist[min_index]: min_index = j
-      # 如果选择出的数据不在正确位置，进行交换 if min_index != i: alist[i], alist[min_index] = alist[min_index], alist[i] alist = [54,226,93,17,77,31,44,55,20] selection_sort(alist) print(alist)</code></pre>
-   <h4>3.插入排序</h4>
-    <p>插入排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未 排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素 中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序 完毕。</p>
-  <p>插入排序算法：</p>
-  <pre class="language-css"><code class="language-css">
-def insert_sort(alist):
-      n=len(alist)
-     for j in range(1,n):
-             i=j
-    while i>0:
-     if alist[i]>alist[i]:
-        alist[i-1],alist[i]=alist[i],alist[i-1]
-    else:
-      break
- i-=1
-if __name__ == '__main__':
-    alist=[54, 226, 93, 17, 77, 31, 44, 55, 20]
-    print('原数组：')
-    print(alist) print('排序后：')
-    insert_sort(alist) print(alist)</code></pre>
-  <div style="text-align: center;">
-           <img alt="" src="../static/images/algorithm1.png" style="width:420px; height: 186px;" /><br />
-          </div>
-   <h4>4.快速排序</h4>
-    <p>快速排序（Selection sort）又称为交换排序，通过一趟排序将要排序的数据分割为 独立的两部分。假设要排序的列表是 A[0]……A[N-1]，
-        首先任意选取一个数据（通常选用 列表的第一个数）作为基准数据，然后将所有比它小的数都放到它左边，所有比它大的数都 放到它右边，
-        这个过程称为一趟快速排序。值得注意的是，快速排序不是一种稳定的排序算 法，也就是说，多个相同的值的相对位置也许会在算法结束时产生变动。</p>
-    <p>步骤为：</p>
-     <ul>
-         <li>设置两个变量 low、high，排序开始的时候：low=0，high=N-1；</li>
-         <li>以第一个列表元素作为基准数据，赋值给 mid，即 mid=A[0]；</li>
-         <li>从 high 开始向前搜索，即由后开始向前搜索(high--)，找到第一个小于 mid 的值 A[high]，将 A[hight]和 A[low]的值交换；</li>
-         <li>从 low 开始向后搜索，即由前开始向后搜索(low++)，找到第一个大于 mid 的 A[low]，将 A[low]和 A[high]的值交换；</li>
-         <li>重复第 3、4 步，直到 low=high；</li>
+//删去la中与lb相同的元素
+Status DelSame(LinkList &la,LinkList &lb )
+{
+    LinkList p,q,r;
+    p=la;q=p->next;
+    while(q!=NULL)
+    {
+        r=lb->next;
+        while(r!=NULL&&r->num!=q->num)
+            r=r->next;
+        if(r==NULL) p=q;
+        else     p->next=q->next;
 
-     </ul>
-   <p>快速排序算法：</p>
-  <pre class="language-css"><code class="language-css">
-def quick_sort(alist, start, end):
-      """快速排序"""
-      # 递归的退出条件
-      if start >= end:
-          return
-      # 设定起始元素为要寻找位置的基准元素
-      mid = alist[start]
-      # low 为序列左边的由左向右移动的游标
-      low = start
-      # high 为序列右边的由右向左移动的游标
-      high = end while low < high:
-      # 如果 low 与 high 未重合，high 指向的元素不比基准元素小，则 high 向左移动
-      while low < high and alist[high] >= mid:
-          high -= 1
-      # 将 high 指向的元素放到 low 的位置上
-          alist[low] = alist[high]
-      # 如果 low 与 high 未重合，low 指向的元素比基准元素小，则 low 向右移动
-       while low < high and alist[low] < mid: low += 1
-      # 将 low 指向的元素放到 high 的位置上
-          alist[high] = alist[low]
-      # 退出循环后，low 与 high 重合，此时所指位置为基准元素的正确位置 # 将基准元素放到该位置
-          alist[low] = mid # 对基准元素左边的子序列进行快速排序
-quick_sort(alist, start, low-1) # 对基准元素右边的子序列进行快速排序
-quick_sort(alist, low+1, end)
-alist = [54,26,93,17,77,31,44,55,20]
-quick_sort(alist,0,len(alist)-1) print(alist)</code></pre>
-  <h4>5.归并排序</h4>
-    <p>归并排序（Selection sort）是采用分治法的一个非常典型的应用。归并排序的思想就是先递归分解数组， 再合并数组。 将数组分解最小之
-        后，然后合并两个有序数组，基本思路是比较两个数组的最前面的数， 谁小就先取谁，取了后相应的指针就往后移一位。然后再比较，直至一
-        个数组为空，最后把 另一个数组的剩余部分复制过来即可。</p>
-  <p>归并排序算法：</p>
-  <pre class="language-css"><code class="language-css">
-def merge_sort(alist):
-      if len(alist) <= 1:
-      return alist
-      # 二分分解
-      num = len(alist)//2
-      left = merge_sort(alist[:num])
-      right = merge_sort(alist[num:])
-      # 合并 return merge(left,right)
-def merge(left, right):
-      '''合并操作，将两个有序数组 left[]和 right[]合并成一个大的有序数组'''
-      #left 与 right 的下标指针
-      l, r = 0, 0
-      result = []
-      while len(left)>l and len>(right)>r:
-      if left[l] < right[r]:
-         result.append(left[l]) l += 1
-      else:
-        result.append(right[r])
-           r += 1
-        result += left[l:]
-        result += right[r:]
-        return result
-alist = [54,26,93,17,77,31,44,55]
-sorted_alist = merge_sort(alist)
-print(sorted_alist)</code></pre>
-<h2 id="section3">三、查找算法</h2>
- <h4>1.顺序查找方法</h4>
-    <p>顺序查找方法（Selection sort）最基本的查找技术，过程：从表中的第一个（或最后一个）记录开始，逐个进行记录的 关键字和给定值比较，
-        若某个记录的关键字和给定值相等，则查找成功，找到所查的记录； 如果直到最后一个（或第一个）记录，其关键字和给定值比较都不等时，
-        则表示没有查到记录，查找不成功。</p>
-  <p>顺序查找算法：</p>
-  <pre class="language-css"><code class="language-css">
-#从 a 列表中查找值 v,如果找到则返回第一次出现的下标，否则返回-1
-def sequenceSearch(a,v):
-    for i in range(len(a)):
-      if a[i] == v:
-      return i
-      return -1
- if __name__ == '__main__':
-      a=[11,22,33,44,55,11]
-      v=22
-      index=sequenceSearch(a,v)
-      print('查找到的索引为：',index)</code></pre>
- <h4>2.二分查找方法</h4>
-    <p>二分查找又称折半查找，优点是比较次数少，查找速度快，平均性能好；其缺点是要求 待查表为有序表，且插入删除困难。因此，折半查找方
-        法适用于不经常变动而查找频繁的有 序列表。首先，假设表中元素是按升序排列，将表中间位置记录的关键字与查找关键字比较， 如果两者
-        相等，则查找成功；否则利用中间位置记录将表分成前、后 fp 两个子表，如果中 间位置记录的关键字大于查找关键字，则进一步查找前一
-        子表，否则进一步查找后一子表。 重复以上过程，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找 不成功。</p>
-  <p>二分法查找法（非递归实现）</p>
-  <pre class="language-css"><code class="language-css">
-def binary_search(alist, item):
-      first = 0
-      last = len(alist) - 1
-      while first <= last:
-         midpoint = (first + last) // 2
-         if alist[midpoint] == item:
-            return True
-         elif item < alist[midpoint]:
-            last = midpoint - 1
-         else:
-            first = midpoint + 1
-      return False
-testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42 ]
-print(binary_search(testlist, 12))
-print(binary_search(testlist, 13))</code></pre>
- <p>二分法查找法（递归实现）</p>
-  <pre class="language-css"><code class="language-css">
-def binary_search(alist, item):
-      if len(alist) == 0:
-         return False
-      else:
-        midpoint = len(alist)//2
-      if alist[midpoint]==item:
-         return True
-      else:
-        if alist[midpoint]>item:
-            return  binary_search(alist[:midpoint],item)
-      else:
-            return binary_search(alist[midpoint+1:],item)
-testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
-print(binary_search(testlist, 3))
-print(binary_search(testlist, 13))</code></pre>
-          </div>
-          <!--定义标签-->
-<!--          <div class="m-padded-lr-responsive m-padded-tb-large">-->
-<!--              <div class="ui basic teal left pointing label">古文阅读</div>-->
-<!--          </div>-->
+        q=q->next;
+    }
+}
+
+/*栈和队列常见算法*/
+
+//进制转换
+void Conersion(int n)
+{
+    Initstack(S);
+    while(n)
+    {
+        push(S,n%N);
+        n/=N;
+    }
+    /*十六进制
+      while(n){
+      if(n%16<=9) push(S,n%16+48);//存入字符
+      else push(S,n%16+55)
+      此时存入的是字符
+      }
+      */
+    while(!emptystack)
+    {
+        pop(S,e);
+        printf("%d",e);
+    }
+}
+
+//行编辑程序,存入文件
+void LineEdit(){
+    FILE *fp=fopen("file.txt","w");
+    InitStack(S);
+    ch=getchar();
+    while(ch!=EOF){
+        while(ch!=EOF&&ch!='\n')
+        {//全文未结束且未到行末
+            switch(ch)
+            {
+                case '#':pop(S,c);break;
+                case '@':clearstack(S);break;
+                default:push(S,ch) ;break;
+            }
+            ch=getchar();
+        }
+        StackTraverse(S,copy);//遇到'\n'或者EOF从栈底到栈顶的栈内字符传送至文件
+        fputc('\n',fp);//向文件传送一个换行符
+        clearstack(S);
+        if(ch!=EOF) ch=getchar();
+    }
+    destroystack(S);
+    fclose(fp);
+}
+
+//迷宫问题
+typedef struct{
+    int x;
+    int y;
+}PosType;//迷宫坐标位置类型
+typedef struct{
+    int ord; //通道块在路径上的序号
+    PosType seat;//通道块在迷宫中的坐标
+    int di;//走向下一个通道快的方向
+}SElemType;
+Mazetype  m;//迷宫数组
+void Print();//输出迷宫的解
+void Init(int k)//迷宫数组的初始化，墙值为0，通道值为k
+    Status Pass(PosType b);//当迷宫m的b点序号为1(可以通过),返回OK，否则，返回error
+    void FootPrint(Postype a)//a点变为足迹
+    PosType Nextpos(PosType&c,int di)//根据当前位置及移动方向，求下一位置
+    void Markprint(PosType b)//使b点序号变为-1(不能通过)
+Status MazePath(PosType start,PosType end)//算法
+{
+    InitStack(S);
+    curpos=start;
+    curstep=1;
+    SElemType e;
+    do{
+
+        if(Pass(curpos)){//当前位置可以通过
+            FootPrint(curpos);//留下足迹
+            e.ord=curstep;e.seat=curpos;e.di=0;
+            push(S,e);//加入路径
+            ++curstep;
+            if(curpos==end)  return true;
+            curpos=Nextpos(curpos,e.di);
+        }
+        else   //当前位置不能通过
+        {
+            if(!Stackempty(S))
+            {
+                pop(S,e);//退栈到前一位置
+                curstep--;//足迹减一
+                while(e.di==3&&!Stackempty(S))//前一位置处于最后一个方向
+                {
+                    markPrint(e.seat);//留下不能通过的标记(-1)
+                    pop(S,e);//继续回退
+                    curstep--;
+                }
+                if(e.di<3)
+                {
+                    e.di++;
+                    push(S,e);//push e into stack again
+                    curstep++;
+                    curpos=e.seat;//确定当前位置
+                    curpos=NeatPos(curpos,e.di);
+                }
+            }
+        }while(!Stackempty(S));
+        return FALSE;
+    }
+}
+
+//表达式求值
+    char Precede(SElemType t1,SElemtype t2)//判断t1,t2量符号的优先关系
+    Status In(Selemtype c)//判断c是否7种运算符之一
+SElemType Operate(SElemType a,SElemType theta,SElemtype b)
+    //做四则运算：a theta b,返回运算结果
+
+SElemtype EvaluateExpression()//算法
+{
+    Initstack(OPTR);push(OPTR,'#');
+    Initstack(OPND);
+    c=getchar();
+    while(c!='#'||Gettop(OPTR)!='#')
+    {
+        if(!In(c)) push(OPND,c);//不是运算符则进栈
+        else
+            switch(Precede(Gettop(OPTR),c)){
+                case '<':push(OPTR，c);c=getcahr();//栈顶元素优先权低
+                         break;
+                case '=':pop(OPTR,x);c=getchar();//脱括号，接受下一个字符
+                         break;
+                case '>':pop(OPTR,thea);// 退栈并将运算结果入栈
+                         pop(OPND,a);pop(OPND,b);
+                         push(OPND,Operate(a,theta,b));
+                         break;
+            }//switch
+        c=getchar();
+    }//while
+    return Gettop(OPND);
+}
+
+//八皇后问题
+typedef struct{
+    int i;
+    int j;
+}Pos;
+Pos pos[3]={{-1,-1},{-1,1},{-1,0}}//检测左上，右上，上,三个方向
+    void queenini(void)//初始化
+    void display(void)//打印出来
+int check(int i,int j)//检测board[i][j]是否能放皇后,返回1，可放
+{
+    int ni,nj,k,t;
+    t=1;
+    for(k=0;k<3;k++)
+    {
+        ni=i;nj=j;
+        while(t&&board[ni][nj]!='#')//未到达边界且未检测到皇后
+        {
+            ni+=pos[k].i;nj+=pos[k].j;
+            if(board[ni][nj]=='*') t=0//t=0表示遇到皇后，退出while，
+        }
+    }
+    return t;
+}
+void queenfind(int i,int j)
+{//递归两个出口：1.i>N  2.回溯，重置board[i][k]=' '
+    int k;
+    if(i>N) {count++;display();}
+    else//j not used,just locate first position
+    {
+        for(k=1;k<=N;k++)
+            if(check(i,k))
+            {
+                board[i][k]='*';
+                queenfind(i+1,j);
+                board[i][k]=' ';
+            }
+    }
+}
+
+/*树中常见算法:遍历,判定*/
+
+//二叉树的先序建立
+typedef struct BiNode{
+    ElemType data;
+    struct BiNode *lchild,*rchild;
+}BiNode,*Bitree;
+void CreatTree(Bitree &p)//先序建立二叉树
+{
+    if((ch=getchar())=='#') p=NULL;
+    else{
+        p=(Bitree)malloc(sizeof(BiNode));
+        p->data=ch;
+        Create(p->lchild);
+        Create(p->rchild);
+    }
+}
+
+//递归遍历
+Status Preorder(Bitree p)
+{
+    if(!p)
+    {
+        visit(p);
+        preorder(p->lchild);
+        Preorder(p->rchild);
+    }
+}//其他类推
+
+//非递归遍历.利用栈
+
+//先序
+Status Preorder(Bitree p)
+{
+    InitStack(S);
+    while(!emptyStack(S)||p)
+    {
+        if(p) {visit(p);push(S,p); p=p->lchild;}//访问根指针，进栈，遍历左子树
+        else {pop(S,p),p=p->rchild;}
+    }
+    return OK;
+}
+//中序
+Status Inorder(Bitree p)
+{
+    InitStack(S);
+    while(!emptyStack(S)||p)
+    {
+        if(p){push(S,p);p=p->lchild;}
+        else { pop(S,p);visit(p); p=p->rchild; }
+    }
+    return OK;
+}
+//后序
+Status Postorder(Bitree p)
+{
+    InitStack(S);
+    Bitree t,l;
+    t=p;l=NULL;
+    while(!emptyStack(S)||t)
+    {
+        if(t) {push(S,t);t=t->lchild;}//存在左孩子，入栈
+        else {t=gettopStack(S);t=t->rchild;}//否则，查找栈顶元素，定位到栈顶的右孩子
+        if(!t||t==l) {pop(S,l);visit(l);t=NULL;}//栈顶的右孩子为空或者上一次被访问，弹出栈顶，并访问
+    }
+    return OK;
+}
+
+//层次遍历.利用队列
+Status LevelOrder(Bitree p)
+{
+    InitQueue(Q);
+    if(p) enqueue(Q);
+    while(!emptyQueue(Q))
+    {
+        dequeue(Q,p);visit(p);
+        if(p->lchild) enqueue(p->lchild);
+        if(p->rchild) enqueue(p->rchild);
+    }
+}
+
+//求二叉树深度,宽度非递归算法
+Status BitreeDepWid(Bitree p)
+{
+    Initqueue(Q);
+    Bitree t,l;
+    l=t=p;
+    int n,wid,dep;
+    n=wid=dep=0;
+    if(p)   enqueue(Q,p);
+    while(!emptyQueue(Q))
+    {
+        dequeue(Q,t);n++;
+        if(t->lchild) enqueue(Q,t->lchild);
+        if(t->rchild) enqueue(Q,t->rchild);
+        if(t==l)
+        {
+            dep++;//换一层，深度加1，
+            if(!emptyQueue(Q)) l=Q.rear->bt;//队不空，l指向队尾节点
+            if(n>wid) wid=n;//某层节点比mid大则替换
+            n=0;
+        }
+        printf(dep,wid);
+    }
+}
+//判断一棵二叉树是否完全二叉树
+Status Iscomplete(Bitree p)
+{
+    Initqueue(Q);
+    Bitree t;
+    if(!p) return FALSE;
+    else enqueue(Q,p);
+    while(!emptyQueue(Q))
+    {
+        dequeue(Q,t);
+        if(t) {enqueue(Q,t->lchild);enqueue(Q,t->rchild);}//节点不空，左右孩子均入队
+        else {
+            while(!emptyQueue(Q)) {dequeue(Q,t);if(t) return FALSE;}
+        }//出现了一个空节点，若再出现一个非空的节点，表明非完全二叉树
+    }
+    return OK;
+}
+
+//删除节点值为x的子树
+Status Delx(Bitree p,Elemtype x)
+{
+    InitQueue(Q);
+    Bitree t=p;
+    if(p->data==x) {Deltree(p);return OK;}
+    enqueue(Q,t);
+    while(!emptyQueue(Q))
+    {
+        dequeue(Q,t);
+        if(t->lchild) {
+            if(t->lchild->data==x) {DelTree(t->lchild);t->lchild=NULL;}
+            else enqueue(Q,t->lchild);
+        }
+        if(t->rchild){
+            if(t->rchild->data==x) {DelTree(t->rchild);t->rchild=NULL;}
+            else enqueue(Q,t->rchild);
+        }
+    }
+
+    //查找第一个以x值为节点的所有父节点
+    Status SearchParent(Bitree p,ElemType x)
+    {//利用二叉树的后序遍历思想
+        InitStack(s);
+        Bitree t,l;
+        t=p,l=NULL;
+        while(t||!empstack(S))
+        {
+            if(t) {
+                if(t->data==x) break;//入栈的时候检测看是否存在取值为x的点，其余跟后序遍历一样
+                else {push(Q,t);t=t->lchild;}
+            }
+            else  { t=gettopStack(Q);t=t->rchild; }
+            if(!t||t==l) {pop(Q,l);t=NULL;}
+        }
+        if(!empStack)//非空，输出父节点
+        {
+            while(!empStack) {pop(Q,t);visit(t);}
+            return OK;
+        }
+        else
+            return FALSE;
+    }
+
+    //二叉排序树的插入
+    Status BST_Insert(Bitree &p,ElemType x)//插入节点一定在叶子节点上
+    {
+        Bitree l,t,k;
+        l=(Bitree)malloc(sizeof(Binode));
+        l->lchild=l->rchild=NULL;
+        t=p;
+        if(t){//根节点非空
+            while(t)
+            {        k=t;
+                if(k->data>x) t=k->lchild;
+                else if(k->data< x) t=k->rchild;
+                else {free(t);break;}
+            }
+            if(k->data>x) k->lchild=l;
+            else k->rchild=l;
+        }
+        else
+            p=l;
+    }
+
+    //二叉排序树的判断：中序遍历 不能用层次遍历（切记）
+        Status Is_BST(Bitree p)
+        {
+            InitStack(S);
+            Bitree t=p;
+            l=NULL;
+            while(t||!empStack(S))
+            {
+                if(t){push(S,t);t=t->lchild;}
+                else {
+                    pop(Q,t);
+                    if(l&&l->data>t->data) return FALSE;//与上次出栈 的数做比较
+                    l=t;t=t->rchild;
+                }
+            }
+        }
+
+        //平衡二叉树的判定
+        Status IS_Balence(Bitree p)
+        {
+            if(!p) return OK;
+            if(abs(dep(p->lchild)-dep(p->rchild))>1) return FALSE;
+            else
+                return (IS_Balence(p->lchild)&&IS_Balence(p->rchild));
+        }
+
+        //Huffman编码 Huffman树
+        typedef struct{
+            unsigned int weight;
+            unsigned int parent,lchild,rchild;
+        }HTNode,*HuffmanTree;
+        typedef char * * HuffmanCode;
+        Status Select(Huffman HT,int n,int &s1,int &s2);//数组HT[1...n]中查找parent
+        为0且weight最小的两个节点，s1权值小于s2
+            //求huffman编码的算法：
+            status HuffmanCoding(HuffmanTree &HT,HuffmanCode &HC,int *w,int n)
+            {
+                if(n<=1) return FALSE;
+                m=2*n-1;//一棵拥有n个叶节点的Huffman树拥有2*n-1个节点
+                HT=(HuffmanTree)malloc((m+1)*sizeof(HTNode));//0号单元未使用
+                for(p=HT,i=1;i<=n;++i) *p={*w,0,0,0};//初始化前n个节点
+                for(;i<=m;i++) *p={0,0,0,0};//初始化剩余节点
+                for(i=n+1;i<=m;i++)//建Huffman树
+                {
+                    Selecte(HT,i-1,s1,s2);
+                    HT[s1].parent=HT[s2].parent=i;
+                    HT[i].lchild=s1,HT[i].rchild=s2;
+                    Ht[i].weight=HT[s1].weight+HT[s2].weight;
+                }
+                //从叶子节点到根逆向求每个字符的Huffman编码
+                HC=(HuffmanCode)malloc((n+1)*sizeof(char *));//分配n个字符编码的头指针向量
+                cd=(char*)malloc(n*sizeof(char));//分配求编码的工作区间
+                cd[n-1]='\0';
+                for(i=1;i<=n;i++)//逐个字符求Huffman编码
+                {
+                    start=n-1;//编码结束符位置
+                    for(c=i,f=HT[i].parent;f!=0;c=f,f=HT[f].parent)//从叶子向根逆向求编码
+                    {
+                        if(c==HT[f].lchild) cd[--start]='0';//c是父节点f的左孩子
+                        else cd[--start]='1';
+                    }
+                    HC[i]=(char*)malloc((n-start)*sizeof(char));
+                    strcpy(HC[i],&cd[start]);
+                }
+            }
+
+        //遍历Huffman树求编码
+        Status Get_HuffmanCode(HuffmanTree HT,HuffmanCode &HC,int n)
+        {
+            HC=(HuffmanCode)malloc((n+1)*sizeof(char*));//分配指向编码的头指针空间
+            cd=(char*)malloc(n*sizeof(char));
+            int p=m;cdlen=0;
+            for(i=1;i<=m;i++) HT[i].weight=0;//遍历Huffman树时作节点状态标记
+            while(p)
+            {
+                if(HT[p].weight==0){//向左
+                    HT[p].weight=1;
+                    if(HT[p].lchild!=0) {p=HT[p].lchild;cd[cdlen++]='0';}
+                    else  if (HT[p].rchild==0) {//登记叶子节点的字符的编码
+                        HC[p]=(char*)malloc((cdlen+1)*sizeof(char));
+                        cd[cdlen]='\0';strcpy(HC[p],cd);//复制编码串
+                    }
+                }
+                else if(HT[p].weight==1) {//向右
+                    HT[p].weight=2;
+                    if(HT[p].rchild!=0) {p=HT[p].rchild;cd[cdlen++]='1';}
+                }
+                else {//HT[p].weight==2，退回
+                    HT[p].weight=0;p=HT[p].parent;--cdlen;//退到父节点，编码长度减1
+                }
+            }
+        }
+
+
+        /*图的基本算法*/
+
+        //DFS:递归 非递归
+        Status DFS(Graph G,VerType v)
+        {
+            visit(v);//访问v节点
+            visit[v]=TRUE;//做访问标记
+            for(w=FirstNeighbor(G,v);w>=0;w=NextNeighor(G,v,w))
+                if(!visit[w]) DFS(G,w);
+        }
+
+        Status DFS(Graph G)//非递归，利用栈
+        {
+            InitStack(Q);
+            for(v=0,v<G.vexnum ; v++)
+                if(!visit[v])
+                {
+                    visit[v]=true;
+                    ArcNode *t;
+                    push(Q,v);
+                    while(!emptyStack(S))
+                    {
+                        pop(Q,t);
+                        visit(t);
+                        for(w=FirstNeighor(G,k);w>=0;w=NextNeighor(G,k,w))
+                            if(!visit[w])
+                            {push(Q,w);
+                                visit[v]=TRUE;
+                            }//if
+                    }//while
+                }//if
+        }
+
+        //BFS:非递归
+
+
+        Status BFS(Graph G)//BFS非递归算法，利用队列
+        {
+            InitQueue(Q);
+            for(v=0;v<G.vernum ;v++)
+                if(!visit[v]){
+                    enqueue(Q,v);
+                    visit[v]=TRUE;//访问标记
+                    while(!empQueue(Q)){
+                        dequeue(Q,v);
+                        visit(v);
+                        for(w=FirstNeighor(G,v);w>=0;w=NextNeighor(G,v,w))
+                            if(!visit[w]) {visit[w]=TRUE;visit(w);enqueue(Q,w);}//访问v的关联点后入队
+                    }//while
+                }//if
+        }
+
+        //拓扑排序:邻接表存储的有向图
+        Status TopLogicalSort(Graph G)
+        {
+            InitStack(S);
+            FindInDegree(G,indegree);//对各顶点求入度indegree[0....vernum-1]
+            for(i=0;i<G.vernum ;i++)
+                if(!indegree[i]) push(Q,i);//顶点为0的入栈
+            int count=0//计数，作最后的判断之用
+                while(!emptyStack(S))
+                {
+                    pop(S,i);visit(i);++count;//输出i号顶点并计数
+                    for(p=G.vertice[i].firstarc;p!=NULL;p=p->nextarc)
+                    {
+                        k=p->adjvex;//对i的每个邻接点的入度减1
+                        if(!(--indegree[k])) push(Q,k);//若度为0则入栈
+                    }
+                }
+            if(count==G.vexnum) return Ok;
+            else
+                return FALSE;
+        }
+
+        //最短路径:Dijstra(1-n).floyd(n-n)
+
+        //floyd,求任意两顶点的最短路径
+        Status ShortestPath_floyd(Graph p)
+        {
+            int path[][][]//3维矩阵记录路径
+                int Distance[][]//二维矩阵记录两点间距离
+                for(v=0;v<G.vexnum;v++)//对各点初始已知距离和路径
+                    for(w=0;w<G.vexnum;w++)
+                    {
+                        d[v][w]=G.arc[v][w];//init the array
+                        for(u=0;u<G.vexnum;u++) p[v][w][u]=0;
+                        if(d[v][w]){//v到w之间有直接路径
+                            p[v][w][v]=p[v][w][w]=1;//v到w经过v和w
+                        }
+                    }
+            for(u=0;u<G.vexnum;u++)
+                for(v=0;v<G.vexnum;v++)
+                    for(w=0;w<G.vexnum;w++)
+                        if(d[v][u]+d[u][w]<d[v][w])//从v到w的一条路径更短
+                        {
+                            d[v][w]=d[v][u]+d[u][w];
+                            for(i=0;i<G.vexnum;i++) p[v][w][i]=p[v][[u][i]||p[u][w][i]//v到w经过v到u和u到w的所有路径
+                        }
+        }
+
+        //dijstra
+        Status ShortestPath_Dijstra(Graph G,int v0,pathmatrix p,shortpathtable d)
+        {
+            int v,w,i,j,min;
+            Status final[];//为真表示该顶点到v0最短距离已求出，初值为假
+            for(v=0;v<G.vexnum;v++)
+            {
+                final[v]=FALSE;
+                d[v]=G.arcs[v0][v].adj;//d[]存放v0到v的最短距离，初值为直接距离
+                for(w=0;w<G.vexnum;+=w)
+                    p[v][w]=FALSE;//初值为FALSE,表示没有路径
+                if(d[v]<INFINITY)//v0到v有直接路径
+                    p[v][v0]=p[v][v]=TRUE;//一维数组p[v][]表示v0到v最短路径通过的顶点
+            }//initial,v0 belongs to Set[s]
+            d[v0]=0;//v0到v0距离为0
+            final[v0]=TRUE;//v0并入S集
+            for(i=1;i<G.vexnum;++i)//其余G.vexnum-1个顶点
+            {//开始主循环，每次求得v0到某个顶点v的最短路径，并将v并入S集
+                min=INFINITY;
+                for(w=0;w<G.vexnum;++w)//对所有顶点检查
+                    if(!final[w]&&d[w]<min)//在S集之外的顶点中找离v0最近的顶点，赋值给v，距离赋值给min
+                    {v=w;min=d[w];}
+                final[v]=TRUE;//v并入S集
+                for(w=0;w<G.vexnum;++w)//根据新并入的顶点更新不在S集中的顶点到v0的距离和路径数组
+                    if(!final[w]&&min<INFINITY&&G.arcs[v][w].adj<INFINITY&&(min+G.arcs[v][w].adj<d[w]))
+                    {//w不属于S集且v0->v->w的距离<目前v0->w的距离
+                        d[w]=min+G.arcs[v][w].adj;//更新d[w]
+                        for(j=0;j<G.vexnum;++j)//修改p[w]，v0到w经过的顶点包括v0到v经过的顶点再加上顶点w
+                            p[w][j]=p[v][j];
+                        p[w][w]=TRUE;
+                    }//if
+            }//for
+        }
+
+        //最小生成树:prim kruskal
+
+        //prim算法
+        Status MiniSpanTree_Prim(MGraph G,VertexType u)
+        {
+            typedef struct{
+                VertexType adjvex;
+                int lowcost;
+            }closedge[MAX_VERTEXNUM];
+            int minivex(miniside sz,MGraph G);//求出sz数组中lowcost最小positive节点，返回其在sz中序号
+            k=Locate(G,u);//找出节点u在节点数组的位置
+            for(j=0;j<G.vexnum;++j)
+                if(j!=k&&G.arcs[k][j].adj)//辅助数组初始化
+                {
+                    closedge[j].adjvex=u;
+                    closedge[j].lowcost=G.arcs[k][j].adj;
+                }
+            closedge[k].lowcost=0;//已访问的节点置于u集中
+            for(i=1;i<G.vexnum;++i)//选择其余G.vexnum-1个顶点
+            {
+                k=minivex(closedge,G);//求出T的下一个顶点：第k顶点
+                printf(closedge[k].adjvex->G.vex[k]);//输出生成树的边
+                closedge[k].lowcost=0;//第k顶点并入u集
+                for(j=0;j<G.vexnum;++j)//加入G.vex[k]后有边权值比原来小
+                    if(G.arcs[k][j].adj>0&&G.arcs[k][j].adj<closedge[j].lowcost)
+                    {
+                        closedge[j].adjvex=G.vex[k];
+                        closedge[j].lowcost=G.arcs[k][j].adj;
+                    }
+            }
+        }
+
+        //kruskal算法
+        Status MiniSpanTree_Kruskal(MGraph G)
+        {
+            int set[MAX_VERTEX_NUM],i,j;
+            int k=0,a=0,b=0,min=G.arcs[a][b].adj;
+            for(i=0;i<G.vexnum;++i)
+                set[i]=i;//初态,各顶点分别属于各集合
+            while(k<G.vexnum-1)//最小生成树边数小于顶点树减1
+            {//寻找最小权值的边
+                for(i=0;i<G.vexnum;++i)
+                    for(j=i+1;j<G.vexnum;++j)
+                        if(G.arc[i][j]<min)
+                        {
+                            min=G.arcs[i][j];
+                            a=i;b=j;
+                        }
+
+                min=G.arcs[a][b].adj=INFINITY;//删除上三角中该边，下次不再查找
+                if(set[a]!=set[b])//边的两顶点不属于同一集合
+                {
+                    printf(G.vexs[a]-G.vexs[b]);//输出该边
+                    k++;//边数加一
+                    for(i=0;i<G.vexnum;i++)
+                        if(set[i]==set[b]) set[i]=set[a];
+                }
+            }
+        }
+
+        /*内部排序算法*/
+        typedef struct{
+            int key;
+            int otherinfo;
+        }redtype;
+        typedef struct{
+            redtype r[MAX+1];
+            int length;
+        }SqList;
+
+        /*1.插入排序*/
+        //直接插入排序
+        void InsertSort(SqList &l)
+        {
+            int i,j;
+            for(i=2;i<l.length;i++)
+                if(l.r[i]<l.r[i-1])
+                {
+                    l.r[0]=l.r[i];//复制为哨兵
+                    for(j=i-1;j>0&&l.r[j].key>l.r[0].key;j--)
+                        l.r[j+1]=l.r[j];//记录后移
+                    l.r[j+1]=l.r[0];//插入
+                }
+        }
+
+        //折半插入排序
+        void BInsertSort(SqList &l)
+        {
+            int i,j,mid,low,high;
+            for(i=2;i<l.length;i++)
+            {
+                l.r[0]=l.r[i];
+                low=1;high=i-1;//注意是插入排序,不是全部序列折半查找
+                while(low<=high)
+                {
+                    mid=low+(high-low)/2;
+                    if(l.r[mid].key>l.r[0].key) high=mid-1;
+                    else low=m+1;
+                }
+                for(j=i-1;j>=high+1;j--)
+                    l.r[j+1]=l.r[j];//记录后移
+                l.r[high+1]=l.r[0];
+            }
+        }
+
+        //希尔排序
+        void ShellSort(sqList &l)
+        {
+            int dk,i,j;
+            for(dk=l.length/2;dk>=1;dk/=2)
+                for(i=dk+1;i<=l.length;++i)
+                    if(l.r[i].key<l.r[i-dk].key)
+                    {
+                        l.r[0]=l.r[i];
+                        for(j=i-dk;j>0&&l.r[j].key<l.r[0].key;j-=dk;)
+                            l.r[j+dk]=l.r[j];//记录后移查找icharu位置
+                        l.r[j+dk]=l.r[0];//插入
+                    }
+        }
+
+        //交换排序：冒泡 快速
+
+        //快速
+
+        void QuickSort(SqList &l,int low,int high)
+        {
+            int pos;
+            if(low<high)
+            {
+                pos=Partion(l,low,high);
+                QuickSort(l,low,pos-1);
+                QuickSort(l,pos+1,high);
+            }
+        }
+        int Partion(SqList &l,int low,int high)
+        {
+            int piv=l.r[low].key;
+            l.r[0]=l.r[low];//以第一个元素为基准
+            while(low<high)
+            {
+                while(low<high&&l.r[high].key>piv) --high;
+                l.r[low]=l.r[high];
+                while(low<high&&l.r[low].key<piv) --low;
+                l.r[high]=l.r[low];
+            }
+            l.r[low]=l.r[[0];
+            return low;
+        }
+
+        //选择排序,堆排序.采用顺序结构存储待排元素
+        void HeapSort(SqList &l)
+        {
+            for(i=l.lenngth/2;i>0;i--)
+                HeapAdjust(l,i,l.length);//把l.r[1...l.length]建成大顶堆
+            for(i=l.length;i>1;i--)
+            {
+                t=l.r[1];
+                l.r[1]=l.r[i];
+                l.r[i]=t;
+                HeapAdjust(l,1,i-1);//将l.[1...i-1]从新调整为大顶堆
+            }
+        }
+
+        void HeapAdjust(SqList &l,int s,int m)//调整H.r[s]的关键字,使H.r[s...m]成大顶堆
+        {
+            int i;
+            t=l.r[s];
+            for(i=2*s;i<m;i*=2)//沿key较大的子节点向下筛选
+            {
+                if(i<m&&l.r[i].key<l.r[i+1].key) ++i;
+                if(t.key>=l.r[i].key) break;//筛选结束
+                else  {l.r[s]=l.r[i];//t应插在s上
+                    s=i;
+                }//修改s值，以便继续向下筛选
+            }
+            l.r[s]=t;//插入
+        }
+
+        //归并排序
+        void Merge(int a[],int b[],int low,int mid,int high)
+        {//将a[low..mid]和a[mid+1...high]合并，b是辅助数组
+            int i,j,k;
+            for(i=low;i<=high;i++) b[i++]=a[i++];a中所有元素复制到b中
+                i=low;j=mid+1;
+            k=low;
+            while(i<=mid&&j<=high)//类似于链表合并
+            {
+                if(b[i].key<b[j].key) a[k++]=b[i++];
+                else a[k++]=b[j++];
+            }
+            while(i<=mid) a[k++]=b[i++];
+            while(j<=high) a[k++]=b[j++];
+        }
+        void MergeSort(int a[],int b,int low,int high)
+        {
+            int mid;
+            if(low<high)
+            {
+                mid=(low+high)/2;
+                MergeSort(a,b,low,mid);
+                MergeSort(a,b,mid+1,high);
+                Merge(a,b,low,mid,high);
+            }
+        }
+
+        //两个升序序列求中位数
+        int search(int a[]，int b[],int n)
+        {
+            int a1,a2,m1,b1,b2,m2;
+            a1=b1=0;a2=b2=n-1;
+            while(a1!=a2&&b1!=b2)
+            {
+                m1=(a1+a2)/2;
+                m2=(b1+b2)/2;
+                if(a[m1]==b[m2]) return a[m1];
+                else if(a[m1]<b[m2])
+                {
+                    if((a1+a2)%2==0) {a1=m2;b2=m2;}
+                    else {a1=m1+1;b2=m2;}
+                }
+                else {
+                    if((a1+a2)%2==0) {a2=m1;b1=m2;}
+                    else {a2=m1;b1=m2+1;}
+                }
+                return a[a1]<b[b1]?a[a1]:b[b1];
+            }
+        }
+
+        //字符串匹配的kmp算法
+        void get_next(const char *str)
+        {
+            int i,j;
+            i=0;j=-1;
+            next[0]=-1;
+            while(*(str+i)!='\0')
+            {
+                if(j==-1||*(str+i)==*(str+j))
+                {
+                    i++;j++;
+                    if(str[i]!=str[j]) next[i]=j;
+                    else next[i]=next[j];
+                }
+                else  j=next[j];
+            }
+            int kmp_search(char *s1,char *s2)
+            {
+                int i,j;
+                i=0;j=0;
+                while(i!=trlen(s1)&&j!=strlen(s2))
+                {
+                    if(j==-1||s1[i]==s2[j]) {i++;j++;}
+                    else j=next[j];
+                }
+                if(j==strlen(s2)) return i-j+1;
+                else return 0;
+            }
+            //二分法求（A*B)%C
+            typedef unsigned _int64 llong;
+            llong Modle(llong a,llong b,llong c)
+            {
+                llong d=0;
+                while(b)
+                {
+                    if(b&1) d=(d+a)%c;
+                    a=(a+a)%c;
+                    b>>=1;
+                }
+                return  d;
+            }
+            //二分法求A^B%C
+            int mod_exp(int a,int b,int c)
+            {
+                int d=1;
+                while(b)
+                {
+                    if(b&1) d=(d*a)%c;
+                    a=(a*a)%c;
+                    b>>=1;
+                }
+                return d;
+            } </code></pre>
+
 
 
       </div>
-      <div class="ui attached positive message ">
-          <!--博客信息说明-->
-          <div class="ui middle aligned grid">
-              <div class="eleven wide column">
-                <ui class=" list">
-                    <li>作者：张宝佳（联系作者）</li>
-                    <li>发表时间：2020-08-15</li>
-                    <li>版权声明：自由转载-非商用-非衍生-保持署名</li>
-                    <li>公众号转载：请在文末添加作者公众二维码</li>
-                </ui>
-              </div>
-              <div class="five wide column">
-                <img src="../static/images/wechat.jpg" alt="" class="ui right floated rounded bordered image" style="width: 110px">
-              </div>
-          </div>
-      </div>
+
+
       <div id="comment-container" class="ui bottom attached segment">
           <!--留言区域列表-->
           <div class="ui teal segment">
@@ -441,42 +1127,7 @@ print(binary_search(testlist, 13))</code></pre>
 </div>
 
 
-<!--底部-->
-<footer class="ui inverted vertical segment m-padded-tb-massive">
-    <div class="ui  center aligned container">
-        <div class="ui inverted divided stackable grid">
-          <!--grid分成16份，9份做三个盒子，剩下7份为一个盒子-->
-            <div  class="three wide column ">
-                <div class="ui inverted  link list">
-                    <div class="item">
-                        <img src="../static/images/wechat.jpg" class="ui rounded image " alt="" width="100px" height="100px""/>
-                    </div>
-                </div>
-            </div>
-            <div class="three wide column">
-                <h4 class="ui inverted header m-text-thin m-text-space ">最新博客</h4>
-                <div class="ui inverted  link list">
-                    <a href="#" class="item">生活的价值</a>
-                    <a href="#" class="item">学习的动力</a>
-                    <a href="#" class="item">向上的勇气</a>
-                </div>
-            </div>
-            <div class="three wide column">
-                <h4 class="ui inverted header m-text-thin m-text-space ">联系我</h4>
-                <div class="ui inverted  link list">
-                    <a href="#" class="item">Email:18192062162@163.com</a>
-                    <a href="#" class="item">QQ:2632995044</a>
-                </div>
-            </div>
-            <div class="seven wide column">
-                <h4 class="ui inverted header m-text-thin m-text-space">Blog</h4>
-                <p class="m-text-thin m-text-space m-opacity-mini">这是我的个人博客，会分享关于编程、写作、思考相关的内容，希望可以给大家提供帮助。</p>
-            </div>
-        </div>
-        <div class="ui inverted section divider"></div>
-        <p class="m-text-thin m-text-space m-opacity-tiny">©2020 本博客仅用于个人学习使用，不得用于其他商业用途，违反者必将追究法律责任。</p>
-    </div>
-</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 <!--<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>-->
